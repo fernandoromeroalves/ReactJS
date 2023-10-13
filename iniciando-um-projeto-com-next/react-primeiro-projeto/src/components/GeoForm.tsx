@@ -1,6 +1,7 @@
 
 import { Circle } from "./circle";
 import { Square } from "./square";
+import { Person } from "./Person";
 
 export const GeoForm = () => {
     return (
