@@ -9,7 +9,9 @@ const Page = () =>{
   
   const handleBtnClick = () =>{
     setCount(count + 2);
-    alert(count + 2)
+    setCount(c => c + 2);
+    setCount(c => c + 2);
+    
     
     
   }
@@ -17,7 +19,7 @@ const Page = () =>{
   return (
     <div className="container w-screen h-screen  flex-col flex justify-center items-center">
       <p className="text-4xl">{count}</p>
-      <button onClick={handleBtnClick} className="bg-blue-600 rounded-md text-white p-4 text-4xl">+2</button>
+      <button onClick={handleBtnClick} className="bg-blue-600 rounded-md text-white p-4 text-4xl">+6</button>
   </div>
   )
 }
