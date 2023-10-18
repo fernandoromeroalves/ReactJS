@@ -3,23 +3,32 @@
 "use client"
 
 import { useState } from "react";
+import{Person2} from "@/types/Person2";
 
 const Page = () =>{
-  const [count, setCount] = useState(0);
+  const [fullName, setFullName] = useState<Person2>({name:'',lastName: ''});
   
-  const handleBtnClick = () =>{
-    setCount(count + 2);
-    setCount(c => c + 2);
-    setCount(c => c + 2);
-    
-    
-    
+  const handleClearButton = () => {
+    setFullName({name:'',lastName: ''});
   }
+  
 
   return (
     <div className="container w-screen h-screen  flex-col flex justify-center items-center">
-      <p className="text-4xl">{count}</p>
-      <button onClick={handleBtnClick} className="bg-blue-600 rounded-md text-white p-4 text-4xl">+6</button>
+      <input type="text"
+      placeholder="Nome"
+      className="border border-black p-3 text-2xl text-black rounded-md mb-3" 
+      value={fullName.name}
+      onChange={e => setFullName({...fullName, name: e.target.value})}/>
+      <input type="text"
+      placeholder="Sobrenome"
+      className="border border-black p-3 text-2xl text-black rounded-md mb-3" 
+      value={fullName.lastName}
+      onChange={e => setFullName({...fullName,lastName: e.target.value})}/>
+      <p>Meu nome completo é:</p>
+      <p>{fullName.name} {fullName.lastName}</p>
+
+      <button onClick={handleClearButton} className="border border-white bg-blue-600 p-2 rounded-md mt-2">limpar tudo</button>
   </div>
   )
 }
