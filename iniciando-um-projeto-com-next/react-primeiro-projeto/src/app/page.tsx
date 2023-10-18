@@ -2,22 +2,22 @@
 //"use client" para eventos de click
 "use client"
 
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 
 const Page = () =>{
-
-  const [showSecret, setShowSecret] = useState(false);
-
-  const handlerClickButton =()=>{
-    setShowSecret(!showSecret);
+  const [count, setCount] = useState(0);
+  
+  const handleBtnClick = () =>{
+    setCount(count + 2);
+    alert(count + 2)
+    
+    
   }
 
   return (
     <div className="container w-screen h-screen  flex-col flex justify-center items-center">
-      <button className="p-3 text-white bg-blue-700 rounded-md mr-3" onClick={handlerClickButton}>{showSecret ? 'ocultar' : 'mostrar'}</button>
-      {showSecret &&
-      <div className="p-3 bg-blue-600 rounded-md mt-3">area secreta</div>
-    }
+      <p className="text-4xl">{count}</p>
+      <button onClick={handleBtnClick} className="bg-blue-600 rounded-md text-white p-4 text-4xl">+2</button>
   </div>
   )
 }
