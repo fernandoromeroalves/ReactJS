@@ -8,8 +8,13 @@ const Page = () => {
   
 
   return ( 
-    <div className="w-screen h-screen flex flex-col items-center text-2xl">
-     
+    <div className="">
+     <h1>Fotos Intergalaticas</h1>
+
+    <section className="container max-w-5xl mx-auto">
+
+    </section>
+
   </div>
   )
 }
