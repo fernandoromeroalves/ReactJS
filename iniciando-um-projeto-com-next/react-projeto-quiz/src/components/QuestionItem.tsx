@@ -3,8 +3,8 @@ import { Question } from "@/types/questions"
 import { useState } from "react";
 
 type Props = {
-    question: Question,
-    count: number,
+    question: Question;
+    count: number;
     onAnswer: (answer: number) => void;
 }
 
@@ -27,7 +27,7 @@ export const QuestionItem = ({question, count, onAnswer}: Props) => {
 
     return (
         <div>
-            <div className=" text-3xl font-bold mb-5">{count}. {question.question}</div>
+            <div className=" text-3xl font-bold mb-5" >{count}. {question.question}</div>
             <div>
                 {question.options.map((item, key) =>(
                     <div
