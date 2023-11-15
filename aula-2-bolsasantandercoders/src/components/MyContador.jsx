@@ -2,6 +2,8 @@ import { useState } from "react"
 
 
 
+
+
 export default function MyContador(){
 
     const [contador, setContador] = useState(0)
@@ -18,20 +20,20 @@ function diminuir(){
 
 if(contador >5){
     return (
-    <div>
+    <div className="container">
         <h1>{contador}</h1>
        <h1>Contador maior que 5</h1>
-        <button onClick={diminuir}>diminuir</button>
-        <button onClick={aumentar}>aumentar</button>
+        <button className='button' onClick={diminuir}>diminuir</button>
+        <button className='button' onClick={aumentar}>aumentar</button>
     </div>
     )
 } else{
     return(
-    <div>
+    <div className="container">
         <h1>{contador}</h1>
         <h1>Contador menor que 5</h1>
-        <button onClick={diminuir}>diminuir</button>
-        <button onClick={aumentar}>aumentar</button>
+        <button className='button' onClick={diminuir}>diminuir</button>
+        <button className='button' onClick={aumentar}>aumentar</button>
     </div>
     )
 }
