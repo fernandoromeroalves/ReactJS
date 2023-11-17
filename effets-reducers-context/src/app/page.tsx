@@ -12,22 +12,19 @@ import { useEffect, useState } from 'react'
 
 export default function Home() {
 
-  const [name,setName] = useState('Fernando')
-  const [age,setAge] = useState(37)
+  const [firstName,setFirstName] = useState('Fernando');
+  const [lastName,setLasttName] = useState('romero');
+  
 
-useEffect(()=>{
-  console.log('rodou o effect!!')
-},[name]);
-
+const fullName = firstName + ' ' + lastName
 
 
   return (
    <div className=''>
-    <p>Meu Nome é: {name}, idade {age} </p>
-    <button className='border border-solid-white p-3 m-2 rounded-md' onClick={()=> setName('fernando romero alves')}>Mudar para nome completo</button>
-    <button className='border border-solid-white p-3 m-2 rounded-md' onClick={()=> setName('fernando')}>Mudar para primeiro nome</button> <br />
-    <button className='border border-solid-white p-3 m-2 rounded-md' onClick={()=> setAge(27)}>mudar para 27 anos</button>
-    <button className='border border-solid-white p-3 m-2 rounded-md' onClick={()=> setAge(37)}>voltar para 37 anos</button> 
+    <p>Meu nome é: {fullName}</p>
+    <button className='border border-solid-white p-3 m-2 rounded-md' onClick={()=> setFirstName('higlander')}>Mudar para nome completo</button>
+    <button className='border border-solid-white p-3 m-2 rounded-md' onClick={()=> setLasttName('')}>Mudar para primeiro nome</button> <br />
+     
    </div>
   )
 }
