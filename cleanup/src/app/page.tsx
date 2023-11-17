@@ -4,6 +4,7 @@
 
 
 
+import { Square } from "@/components/Square";
 import { useState } from "react"
 
 export default function Home() {
@@ -13,9 +14,9 @@ export default function Home() {
 
   return (
     <div className="">
-      <button onClick={() => setShow(!show)}>Mostrar/Ocultar</button>
+      <button onClick={() => setShow(!show)}>Mostrar/Ocultar</button> <br />
 
-      {show && </>}
+      {show && <Square/>}
     </div>
   )
 }
