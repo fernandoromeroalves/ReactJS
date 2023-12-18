@@ -29,6 +29,28 @@ export default function Home() {
     })
   }
 
+  const handleEdt = (id: number) =>{
+    const item = list.find(it => it.id === id);
+    if(!item) return false;
+    
+      const newText = window.prompt('Editar Tarefa', item.text);
+      if(!newText || newText.trim() ==='')return false;
+      
+      dispatch({
+        type: 'editText',
+        payload: {id,newText}
+      })
+    
+  }
+
+  const handleRemove = (id:number)=>{
+   if (!window.confirm('Ja era mesmo? vai apagar?')) return false
+    dispatch({
+      type:'remove',
+      payload: {id}
+    })
+  }
+
   return (
     <div className='container mx-auto'>
       <h1 className="text-center text-4xl my-4">lista de tarefas</h1>
@@ -57,8 +79,8 @@ export default function Home() {
           defaultChecked = 'checked'         
           />
             <p className="flex-1 text-lg">{item.text}</p>
-            <button className="mx-4 text-white hover:text-gray-500">Editar</button>
-            <button className="mx-4  text-white hover:text-gray-500">Excluir</button>
+            <button onClick={()=> handleEdt(item.id)} className="mx-4 text-white hover:text-gray-500">Editar</button>
+            <button onClick={()=> handleRemove(item.id)} className="mx-4  text-white hover:text-gray-500">Excluir</button>
             </li>
         ))}
       </ul>
